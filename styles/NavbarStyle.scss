@@ -1,0 +1,56 @@
+
+@media only screen and (min-width: 600px) {
+    .navbarCustom{
+        padding: 0 20vw;
+    }
+    .navbar-item.navbar-itemCustom{
+        text-align: center !important;
+        display: block;
+        min-width: 100px;
+        align-self: center;
+        margin-left: 5px;
+        color: #3a3a3a;
+    }
+    
+    .navbar-item.navbar-itemCustom::after{
+        content: "";
+        border-bottom: solid 1px transparent;
+        position: absolute;
+        box-sizing: border-box;
+        bottom: 0;
+        right: 0;
+        height: 0;
+        width: 0;
+    }
+    
+    .navbar-item.navbar-itemCustom:hover::after{
+        height: 2px;
+        width: 100px;
+        border-bottom-color: #3a3a3a;
+        transition: width 0.2s linear;
+    }
+
+    .shopButton:hover::after{
+        height: 2px;
+        width: 0px !important;
+        border-bottom-color: #3a3a3a;
+        transition: width 0.2s linear;
+    }
+
+    .shopButton{
+        border-radius: 20px;
+    }
+}
+
+.navbar-item.navbar-itemCustom:hover{
+    transition: 0.2s ease-in !important;
+}
+
+.shopButton{
+    background-color: #6FB2F1;
+    color: white !important;
+    transition: 0.1s ease-in !important;
+}
+.shopButton:hover{
+    background-color: #2991f2 !important;
+}
