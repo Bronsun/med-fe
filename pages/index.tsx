@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
-import CategoriesBar from '../components/CategoriesBar'
-import MainPageTile from '../components/MainPageTile'
-import MainSearcher from '../components/MainSearcher'
-import NavbarComponent from '../components/Navbar'
+import CategoriesBar from '../components/Organisms/CategoriesBar'
+import MainPageTile from '../components/Molecules/MainPageTile'
+import MainSearcher from '../components/Organisms/MainSearcher'
+import NavbarComponent from '../components/Organisms/Navbar'
 
 const Home: NextPage = () => {
   return (
@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       <NavbarComponent/>
       <CategoriesBar/>
       <MainSearcher/>
-      <div>
+      <div className='tile'>
         <MainPageTile/>
         <MainPageTile/>
         <MainPageTile/>

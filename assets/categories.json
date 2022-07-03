@@ -1,0 +1,42 @@
+{"categories":[
+    {
+        "name":"dermatologia",
+        "iconPath":"/categoryIcons/dermatology.png"
+    },
+    {
+        "name":"stomatologia",
+        "iconPath":"/categoryIcons/stomatology.png"
+    },
+    {
+        "name":"neurologia",
+        "iconPath":"/categoryIcons/neurology.png"
+    },
+    {
+        "name":"ortopedia",
+        "iconPath":"/categoryIcons/ortopedy.png"
+    },
+    {
+        "name":"rehabilitacja",
+        "iconPath":"/categoryIcons/rehabilitation.png"
+    },
+    {
+        "name":"laryngologia",
+        "iconPath":"/categoryIcons/laryngology.png"
+    },{
+        "name":"ginekologia",
+        "iconPath":"/categoryIcons/ginekology.png"
+    },
+    {
+        "name":"okulistyka",
+        "iconPath":"/categoryIcons/glassology.png"
+    },
+    {
+        "name":"kardiologia",
+        "iconPath":"/categoryIcons/cardiology.png"
+    },
+    {
+        "name":"psychiaria",
+        "iconPath":"/categoryIcons/psychiatry.png"
+    }    
+]
+}

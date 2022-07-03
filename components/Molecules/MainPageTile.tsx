@@ -3,7 +3,7 @@
 const MainPageTile=()=>{
 
     return (
-        <div>
+        <div className="tile">
             <h1>Tile</h1>
         </div>
     )

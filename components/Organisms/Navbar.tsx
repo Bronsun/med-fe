@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ShoppingCartIcon from "../icons/ShoppingCartIcon";
+import Image from 'next/image';
 
 const NavbarComponent = () => {
   const [isNavbarOpened, setIsNavbarOpened] = useState(false);
@@ -34,22 +34,22 @@ const NavbarComponent = () => {
         className={`navbar-menu ${isNavbarOpened ? "is-active" : ""}`}
       >
         <div className="navbar-end">
-          <a className="navbar-item navbar-itemCustom" href="\">
+          <a className="navbar-item navbar-itemCustom is-clickable hoverLightBlue" href="\">
             NFZ
           </a>
-          <a className="navbar-item navbar-itemCustom" href="\">
+          <a className="navbar-item navbar-itemCustom is-clickable hoverLightBlue" href="\">
             O nas
           </a>
-          <a className="navbar-item navbar-itemCustom" href="\">
+          <a className="navbar-item navbar-itemCustom is-clickable hoverLightBlue" href="\">
             Kontakt
           </a>
-          <a className="navbar-item navbar-itemCustom shopButton" href="\">
-          <span className="icon-text">
-  <span className="icon">
-    <ShoppingCartIcon/>
-  </span>
-  <span>Shop</span>
-</span>
+          <a className="navbar-item navbar-itemCustom is-clickable shopButton hoverDarkBlue" href="\">
+            <span className="icon-text">
+              <span className="icon">
+                <Image src="/shoppingCart.svg" alt="Sklep" width={32} height={32}/>
+              </span>
+              <span>Shop</span>
+            </span>
           </a>
         </div>
       </div>
