@@ -48,7 +48,7 @@ const NavbarComponent = () => {
               <span className="icon">
                 <Image src="/shoppingCart.svg" alt="Sklep" width={32} height={32}/>
               </span>
-              <span>Shop</span>
+              <span>Sklep</span>
             </span>
           </a>
         </div>

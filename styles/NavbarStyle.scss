@@ -1,8 +1,9 @@
+@import 'colorTheme';
 
 @media (min-width: 600px) {
     .navbarCustom{
         padding: 0 20vw;
-        border-bottom: 1px solid #d3d3d3;
+        border-bottom: 1px solid $lightGreyHorizontalLine;
         margin-bottom: 10px;
     }
     .navbar-item.navbar-itemCustom{
@@ -33,13 +34,13 @@
     }
 
     .categoriesTileDiv:hover{
-        background-color: #f7fafd;
+        background-color: $lightBlueHover;
         border-radius: 10px;
         transition: 0.2s ease-in !important;
     }
 
     .hoverLightBlue:hover{
-        background-color: #f7fafd !important;
+        background-color: $lightBlueHover !important;
         border-radius: 10px;
     }
 }
@@ -49,12 +50,12 @@
 }
 
 .shopButton{
-    background-color: #6FB2F1;
+    background-color: $blueButton;
     color: white !important;
     transition: 0.1s ease-in !important;
 }
 .hoverDarkBlue:hover{
-    background-color: #2991f2 !important;
+    background-color: $blueButtonHover !important;
 }
 
 @media screen and(max-width:600px) {
