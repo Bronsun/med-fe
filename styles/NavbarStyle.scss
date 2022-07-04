@@ -1,0 +1,74 @@
+@import 'colorTheme';
+
+@media (min-width: 600px) {
+    .navbarCustom{
+        padding: 0 20vw;
+        border-bottom: 1px solid $lightGreyHorizontalLine;
+        margin-bottom: 10px;
+    }
+    .navbar-item.navbar-itemCustom{
+        text-align: center !important;
+        display: block;
+        min-width: 100px;
+        align-self: center;
+        margin-left: 5px;
+        color: #3a3a3a;
+    }
+
+    .shopButton{
+        border-radius: 20px;
+        min-width: 150px !important;
+    }
+
+    .categoriesTileDiv{
+        max-width: min-content;
+        transition: 0.2s ease-in !important;
+    }
+
+    .categoriesTileDiv p{
+        font-size: 14px;
+    }
+
+    .categoriesBarDiv{
+        max-width: min-content;
+        margin: auto;
+        margin-bottom:10px;
+    }
+
+    .categoriesTileDiv:hover{
+        background-color: $lightBlueHover;
+        border-radius: 10px;
+       
+    }
+
+    .hoverLightBlue:hover{
+        background-color: $lightBlueHover !important;
+        border-radius: 10px;
+    }
+}
+
+.navbar-item.navbar-itemCustom:hover{
+    transition: 0.2s ease-in !important;
+}
+
+.shopButton{
+    background-color: $blueButton;
+    color: white !important;
+    transition: 0.1s ease-in !important;
+}
+.hoverDarkBlue:hover{
+    background-color: $blueButtonHover !important;
+}
+
+@media screen and(max-width:600px) {
+    .categoriesBarDiv{
+        overflow-y: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .categoriesTileDiv{
+        max-width: min-content;
+        display: inline-block;
+    }
+}
+
