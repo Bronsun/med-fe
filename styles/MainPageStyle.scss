@@ -65,6 +65,7 @@
     border: none;
     font-weight: 500;
     width: 100%;
+    transition: 0.2s ease-out;
 }
 
 .mainSearcherWrapper h1{
@@ -86,6 +87,7 @@
     letter-spacing: 2px;
     width: 100%;
     margin-bottom: 10px;
+    transition: 0.2s ease-out;
 }
 
 .mainSearcherPanel{

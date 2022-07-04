@@ -22,6 +22,7 @@
 
     .categoriesTileDiv{
         max-width: min-content;
+        transition: 0.2s ease-in !important;
     }
 
     .categoriesTileDiv p{
@@ -31,12 +32,13 @@
     .categoriesBarDiv{
         max-width: min-content;
         margin: auto;
+        margin-bottom:10px;
     }
 
     .categoriesTileDiv:hover{
         background-color: $lightBlueHover;
         border-radius: 10px;
-        transition: 0.2s ease-in !important;
+       
     }
 
     .hoverLightBlue:hover{
