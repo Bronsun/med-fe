@@ -12,7 +12,7 @@ const NavbarComponent = () => {
     >
       <div className="navbar-brand">
         <a className="navbar-item" href="\">
-          NAZWA
+        <Image src="/otoprzychodnie-logo.png" alt="otoprzychodnie logo" width={240} height={40}/>
         </a>
 
         <a
