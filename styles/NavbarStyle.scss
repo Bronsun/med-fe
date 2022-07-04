@@ -19,10 +19,31 @@
         border-radius: 20px;
         min-width: 150px !important;
     }
+    ::-webkit-scrollbar {
+        width: 0.5px;
+        height:3px;
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: rgb(255, 253, 253);
+      }
+      
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: rgb(255, 253, 253);
+      
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(255, 253, 253);
+      }
 
     .categoriesTileDiv{
         max-width: min-content;
         transition: 0.2s ease-in !important;
+       
     }
 
     .categoriesTileDiv p{
@@ -33,6 +54,10 @@
         max-width: min-content;
         margin: auto;
         margin-bottom:10px;
+        overflow-y: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+        display: inline-block;
     }
 
     .categoriesTileDiv:hover{
