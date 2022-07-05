@@ -41,8 +41,9 @@
       }
 
     .categoriesTileDiv{
-        max-width: min-content;
-        transition: 0.2s ease-in !important;
+        width: 100px;
+        transition: background-color 0.2s ease-in !important;
+        transition: width 200ms !important;
     }
 
     .categoriesTileDiv p{
@@ -59,15 +60,39 @@
         display: inline-block;
     }
 
+    .moreCategoriesBox{
+        max-width: max-content;
+        margin: auto;
+        margin-bottom:10px;
+        overflow-y: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+        display: inline-block;
+        width: 700px;
+    }
+
+    .closeCategoriesList{
+        display: block;
+        width: 100%;
+        background-color: transparent;
+        border:none;
+        margin-top:-14px;
+        opacity: 0.6;
+    }
+
     .categoriesTileDiv:hover{
         background-color: $lightBlueHover;
         border-radius: 10px;
-       
     }
 
     .hoverLightBlue:hover{
         background-color: $lightBlueHover !important;
         border-radius: 10px;
+    }
+
+    .widthzero{
+        width: 0;
+        transition: width 200ms;
     }
 }
 

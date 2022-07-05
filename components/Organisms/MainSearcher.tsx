@@ -43,7 +43,7 @@ const MainSearcher = () => {
             aria-label="close"
             onClick={(e: any) => setOpenedModal(false)}
           >
-            X
+            <Image src="/closeModal.png" width={28} height={28} alt="close" />
           </button>
           <div>
             <h1>Znajdź przychodnię i wolny termin</h1>
