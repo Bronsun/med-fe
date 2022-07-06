@@ -119,7 +119,7 @@ const MainSearcher = () => {
                 <input
                   className="checkbox"
                   type="checkbox"
-                  onClick={(e: any) =>
+                  onChange={(e: any) =>
                     setFields({
                       benefits_for_children: !query.benefits_for_children,
                     })
