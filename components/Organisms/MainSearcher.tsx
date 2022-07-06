@@ -1,9 +1,32 @@
 import Image from "next/image";
 import { useState } from "react";
+import { APIservice } from "../../api/APIservice";
+import { GetClinicsConfig } from "../../api/ConfigCreator";
+import { GetClinicsQuery } from "../../models/GetClinicsQuery";
 import InputComponent from "../Atoms/InputComponent";
 
 const MainSearcher = () => {
+  const service = APIservice();
   const [openedModal, setOpenedModal] = useState<boolean>(false);
+  const [query, setQuery] = useState<GetClinicsQuery>({
+    benefit: "",
+    city: "",
+    address: "",
+    voivodeship: "",
+    private_name: "",
+    benefits_for_children: false,
+    page: 0,
+    limit: 25,
+  });
+
+  const setFields = (fields: any) => {
+    setQuery({ ...query, ...fields });
+  };
+
+  const searchClinics = (e: any) => {
+    e.preventDefault();
+    service.execute!(GetClinicsConfig(query));
+  };
 
   return (
     <div className="mainSearcherWrapper">
@@ -14,11 +37,25 @@ const MainSearcher = () => {
       <InputComponent
         className="nth3"
         placeholder="Zacznij wpisywać nazwę świadczenia..."
+        onChange={(e: any) => setFields({ benefit: e.target.value })}
+        value={query.benefit}
       />
-      <InputComponent className="nth4" placeholder="Województwo" />
-      <InputComponent className="nth5" placeholder="Miasto" />
+      <InputComponent
+        className="nth4"
+        placeholder="Województwo"
+        onChange={(e: any) => setFields({ voivodeship: e.target.value })}
+        value={query.voivodeship}
+      />
+      <InputComponent
+        className="nth5"
+        placeholder="Miasto"
+        onChange={(e: any) => setFields({ city: e.target.value })}
+        value={query.city}
+      />
       <div className="control nth6">
-        <button className="button searchbutton">Wyszukaj</button>
+        <button className="button searchbutton" onClick={searchClinics}>
+          Wyszukaj
+        </button>
       </div>
       <div className="control nth7">
         <button
@@ -51,22 +88,52 @@ const MainSearcher = () => {
               Nie czekaj w kolejce i znajdź placówkę z najszybszym terminem.
             </h3>
           </div>
-          <InputComponent placeholder="Zacznij wpisywać nazwę świadczenia..." />
-          <InputComponent placeholder="Województwo" />
-          <InputComponent placeholder="Miasto" />
-          <InputComponent placeholder="Szpital/przychodnia" />
-          <InputComponent placeholder="Nazwa miejsca udzielenia świadczenia" />
-          <InputComponent placeholder="Ulica" />
+          <InputComponent
+            placeholder="Zacznij wpisywać nazwę świadczenia..."
+            onChange={(e: any) => setFields({ benefit: e.target.value })}
+            value={query.benefit}
+          />
+          <InputComponent
+            placeholder="Województwo"
+            onChange={(e: any) => setFields({ voivodeship: e.target.value })}
+            value={query.voivodeship}
+          />
+          <InputComponent
+            placeholder="Miasto"
+            onChange={(e: any) => setFields({ city: e.target.value })}
+            value={query.city}
+          />
+          <InputComponent
+            placeholder="Nazwa przychodni/szpitala"
+            onChange={(e: any) => setFields({ private_name: e.target.value })}
+            value={query.private_name}
+          />
+          <InputComponent
+            placeholder="Ulica"
+            onChange={(e: any) => setFields({ address: e.target.value })}
+            value={query.address}
+          />
           <div className="field">
             <div className="control">
               <label className="checkbox">
-                <input className="checkbox" type="checkbox" /> Świadczenie dla
-                dziecka
+                <input
+                  className="checkbox"
+                  type="checkbox"
+                  onClick={(e: any) =>
+                    setFields({
+                      benefits_for_children: !query.benefits_for_children,
+                    })
+                  }
+                  checked={query.benefits_for_children ?? false}
+                />{" "}
+                Świadczenie dla dziecka
               </label>
             </div>
           </div>
           <div className="control">
-            <button className="button searchbutton">Wyszukaj</button>
+            <button className="button searchbutton" onClick={searchClinics}>
+              Wyszukaj
+            </button>
           </div>
         </div>
       </div>
