@@ -1,4 +1,4 @@
-import { ClinicModel } from "./ClinicModel";
+import ClinicModel from "./ClinicModel";
 
 export interface ClinicsResponse {
   total_record: number;

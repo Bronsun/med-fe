@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { useState } from "react";
-import { APIservice } from "../../api/APIservice";
-import { GetClinicsConfig } from "../../api/ConfigCreator";
+import { GetQueryParameters } from "../../api/APIutilities";
 import { GetClinicsQuery } from "../../models/GetClinicsQuery";
 import InputComponent from "../Atoms/InputComponent";
+import { useRouter } from "next/router";
 
 const MainSearcher = () => {
-  const service = APIservice();
+  const router = useRouter();
   const [openedModal, setOpenedModal] = useState<boolean>(false);
   const [query, setQuery] = useState<GetClinicsQuery>({
     benefit: "",
@@ -25,7 +25,7 @@ const MainSearcher = () => {
 
   const searchClinics = (e: any) => {
     e.preventDefault();
-    service.execute!(GetClinicsConfig(query));
+    router.push({ pathname: "/clinics", query: GetQueryParameters(query) });
   };
 
   return (

@@ -1,4 +1,4 @@
-export interface ClinicModel {
+export default interface ClinicModel {
   id: string;
   private_name: string;
   nfz_name: string;

@@ -24,10 +24,10 @@ export interface ErrorWithCode {
 }
 
 export const GetQueryParameters = (query: any) => {
-  var parameters = "?";
+  var parameters = "";
   for (var key of Object.keys(query)) {
     if (typeof query[key] === "string" && query[key].length === 0) continue;
-    if (parameters.length !== 1) parameters += "&";
+    if (parameters.length !== 0) parameters += "&";
     parameters += key + "=" + query[key];
   }
   return parameters;
