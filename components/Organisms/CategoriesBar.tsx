@@ -3,11 +3,16 @@ import categoriesData from "../../assets/categories.json";
 import { useState } from "react";
 import Image from "next/image";
 import AnimateHeight from "react-animate-height";
-import {isMobile} from 'react-device-detect';
+import { isMobile } from "react-device-detect";
 
-const CategoriesBar = () => {    
+interface CategoriesBarProps {
+  style?: {};
+}
 
-  const NUMBER_OF_CATEGORIES_VISIBLE = isMobile? categoriesData.categories.length :10;
+const CategoriesBar = (props: CategoriesBarProps) => {
+  const NUMBER_OF_CATEGORIES_VISIBLE = isMobile
+    ? categoriesData.categories.length
+    : 10;
 
   const [openList, setOpenList] = useState<boolean>(false);
   const [listHeight, setListHeight] = useState<any>(0);
@@ -18,7 +23,7 @@ const CategoriesBar = () => {
   };
 
   return (
-    <div>
+    <div style={props.style}>
       <div className="tile categoriesBarDiv">
         {categoriesData.categories
           .filter((_, index) => index < NUMBER_OF_CATEGORIES_VISIBLE)
@@ -29,15 +34,15 @@ const CategoriesBar = () => {
               key={index}
             />
           ))}
-        {categoriesData.categories.length > NUMBER_OF_CATEGORIES_VISIBLE &&
-            <CategoriesTile
-              className={`${openList?"widthzero":""}`}
-              name="pozostałe"
-              iconPath="/categoryIcons/more.png"
-              key={NUMBER_OF_CATEGORIES_VISIBLE + 1}
-              onClick={() => toggleList(true)}
-            />
-          }
+        {categoriesData.categories.length > NUMBER_OF_CATEGORIES_VISIBLE && (
+          <CategoriesTile
+            className={`${openList ? "widthzero" : ""}`}
+            name="pozostałe"
+            iconPath="/categoryIcons/more.png"
+            key={NUMBER_OF_CATEGORIES_VISIBLE + 1}
+            onClick={() => toggleList(true)}
+          />
+        )}
       </div>
       <AnimateHeight duration={500} height={listHeight}>
         {[
@@ -69,8 +74,7 @@ const CategoriesBar = () => {
         >
           <Image src="/collapse-arrow.png" width={40} height={28} alt="close" />
         </button>
-      
-        </AnimateHeight>
+      </AnimateHeight>
     </div>
   );
 };

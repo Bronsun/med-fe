@@ -1,0 +1,30 @@
+
+.clinicsPageWrapper{
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+}
+
+.clinicsContentWrapper{
+    flex: 1 1 auto;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+}
+
+.clinicsList{
+    width: 700px;
+    min-height: -webkit-min-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.clinicsItem{
+    border:1px black solid;
+}
+
+.clinicsLeftPanel{
+    width: 40px;
+    height: 100%;
+    display: inline;
+}

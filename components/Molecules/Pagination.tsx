@@ -2,6 +2,7 @@ interface PaginationProps {
   totalPages: number;
   currentPage: number;
   setCurrentPage: (value: number) => void;
+  style?:{}
 }
 
 const Pagination = (props: PaginationProps) => {
@@ -10,6 +11,7 @@ const Pagination = (props: PaginationProps) => {
       className="pagination is-centered"
       role="navigation"
       aria-label="pagination"
+      style={props.style}
     >
       <button
         className="pagination-previous"

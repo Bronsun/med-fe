@@ -1,7 +1,11 @@
 import { useState } from "react";
 import Image from 'next/image';
 
-const NavbarComponent = () => {
+interface NavbarComponentProps{
+  style?:{};
+}
+
+const NavbarComponent = (props:NavbarComponentProps) => {
   const [isNavbarOpened, setIsNavbarOpened] = useState(false);
 
   return (
@@ -9,6 +13,7 @@ const NavbarComponent = () => {
       className="navbar navbarCustom"
       role="navigation"
       aria-label="main navigation"
+      style={props.style}
     >
       <div className="navbar-brand">
         <a className="navbar-item" href="\">

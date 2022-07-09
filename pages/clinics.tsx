@@ -5,13 +5,13 @@ import { APIservice } from "../api/APIservice";
 import { GetQueryParameters, ServiceState } from "../api/APIutilities";
 import { GetClinicsConfig } from "../api/ConfigCreator";
 import LoadingComponent from "../components/Atoms/LoadingComponents";
-import SelectSearchComponent from "../components/Atoms/SelectSearchComponent";
+import ClinicsList from "../components/Organisms/ClinicsList";
 import Pagination from "../components/Molecules/Pagination";
 import CategoriesBar from "../components/Organisms/CategoriesBar";
 import NavbarComponent from "../components/Organisms/Navbar";
 import ClinicModel from "../models/ClinicModel";
 
-const ClinicsList: NextPage = () => {
+const Clinics: NextPage = () => {
   const router = useRouter();
   const service = APIservice();
 
@@ -33,32 +33,30 @@ const ClinicsList: NextPage = () => {
     //if(service.state===ServiceState.Error)  zrób coś fajnego
   }, [service.state]);
 
-  return (
-    <div>
-      <NavbarComponent />
-      <CategoriesBar />
-      <SelectSearchComponent />
-      {service.state === ServiceState.InProgress && <LoadingComponent />}
-      {service.state === ServiceState.Fetched && (
-        <div>
-          <p>
-            data:
-            {clinicsList.map((clinic: ClinicModel, index) => (
-              <p key={index}>{clinic.id}</p>
-            ))}
-          </p>
+  const flexStyle = {
+    flex: "0 0 auto",
+  };
 
-          {service.result.total_page > 1 && (
-            <Pagination
-              totalPages={service.result.total_page}
-              currentPage={currentPage}
-              setCurrentPage={(value: number) => setCurrentPage(value)}
-            />
-          )}
-        </div>
+  return (
+    <div className="clinicsPageWrapper">
+      <NavbarComponent style={flexStyle} />
+      <CategoriesBar style={flexStyle} />
+      <div className="clinicsContentWrapper">
+        {service.state === ServiceState.InProgress && <LoadingComponent />}
+        {service.state === ServiceState.Fetched && (
+          <ClinicsList clinicsList={clinicsList} />
+        )}
+      </div>
+      {service.result.total_page > 1 && (
+        <Pagination
+          totalPages={service.result.total_page}
+          currentPage={currentPage}
+          setCurrentPage={(value: number) => setCurrentPage(value)}
+          style={flexStyle}
+        />
       )}
     </div>
   );
 };
 
-export default ClinicsList;
+export default Clinics;
