@@ -8,9 +8,11 @@ interface ClinicsListProps {
 const ClinicsList = (props: ClinicsListProps) => {
   return (
     <div className="clinicsList">
-      {props.clinicsList.map((clinic: ClinicModel, index) => (
-        <ClinicItem key={index} clinic={clinic} />
-      ))}
+      {props.clinicsList === null && <p className="noResults">Brak wyników</p>}
+      {props.clinicsList !== null &&
+        props.clinicsList.map((clinic: ClinicModel, index) => (
+          <ClinicItem key={index} clinic={clinic} />
+        ))}
     </div>
   );
 };

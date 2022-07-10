@@ -15,4 +15,5 @@ export default interface ClinicModel {
   latitude: number;
   longitude: number;
   visit_date: string;
+  phone: number;
 }
