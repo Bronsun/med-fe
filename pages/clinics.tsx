@@ -43,23 +43,24 @@ const Clinics: NextPage = () => {
       <CategoriesBar style={flexStyle} />
       <div className="clinicsContentWrapper">
         <div className="clinicsLeftPanel reklama">Reklama</div>
-      <div className="clinicsMiddlePanel">
-      <div className="clinicsMiddleContentWrapper">
-        {service.state === ServiceState.InProgress && <LoadingComponent />}
-        {service.state === ServiceState.Fetched && (
-          <ClinicsList clinicsList={clinicsList} />
-        )}
-      </div>
-      {service.result.total_page > 1 && (
-        <Pagination
-          totalPages={service.result.total_page}
-          currentPage={currentPage}
-          setCurrentPage={(value: number) => setCurrentPage(value)}
-          style={flexStyle}
-        />
-      )}
-      </div>
-      <div className="clinicsRightPanel">Map</div>
+        <div className="clinicsMiddlePanel">
+          <div className="clinicsMiddleContentWrapper">
+            {service.state === ServiceState.InProgress && <LoadingComponent />}
+            {service.state === ServiceState.Fetched && (
+              <ClinicsList clinicsList={clinicsList} />
+            )}
+          </div>
+          {service.result !== undefined &&
+            service.result.total_page > 1 && (
+              <Pagination
+                totalPages={service.result.total_page}
+                currentPage={currentPage}
+                setCurrentPage={(value: number) => setCurrentPage(value)}
+                style={flexStyle}
+              />
+            )}
+        </div>
+        <div className="clinicsRightPanel">Map</div>
       </div>
     </div>
   );

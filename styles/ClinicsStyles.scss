@@ -1,5 +1,27 @@
 @import 'colorTheme';
 
+@media (min-width: 600px){
+    .clinicsContentWrapper{
+        grid-template-columns: 1fr 700px 1fr;
+        overflow: auto;
+    }
+    .clinicsList{
+        width: 700px;
+    }
+    .clinicsMiddlePanel{
+        flex: 1 1 auto;
+        display: flex;
+        overflow: auto;
+        flex-direction: column;
+    }
+    .clinicsMiddleContentWrapper{
+        overflow: auto;
+    }
+    .clinicsList{
+        overflow-y: scroll;
+    }
+}
+
 .clinicsPageWrapper{
     height: 100vh;
     display: flex;
@@ -8,29 +30,14 @@
 
 .clinicsContentWrapper{
     display: grid;
-    grid-template-columns: 1fr 700px 1fr;
-    overflow: auto;
     border-top: 1px solid $lightGreyHorizontalLine;
 }
 
-.clinicsMiddlePanel{
-    flex: 1 1 auto;
-    display: flex;
-    overflow: auto;
-    flex-direction: column;
-}
-
-.clinicsMiddleContentWrapper{
-    overflow: auto;
-}
-
 .clinicsList{
-    width: 700px;
     min-height: -webkit-min-content;
     display: flex;
     flex-direction: column;
     background-color: $lightBlueHover;
-    overflow-y: scroll;
 }
 
 .clinicsItem{
