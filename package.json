@@ -19,7 +19,8 @@
     "react-device-detect": "^2.2.2",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.3.0",
-    "react-select-search": "^3.0.10"
+    "react-select-search": "^3.0.10",
+    "react-select-search-nextjs": "^3.0.9"
   },
   "devDependencies": {
     "@types/node": "18.0.0",

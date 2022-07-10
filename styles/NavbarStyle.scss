@@ -119,4 +119,10 @@
         max-width: min-content;
         display: inline-block;
     }
+    .select-search__input{
+        min-width: 200px;
+        max-width: 100%;
+       
+        margin-bottom: 10px;
+    }
 }

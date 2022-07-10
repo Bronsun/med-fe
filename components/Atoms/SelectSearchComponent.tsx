@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useRef } from "react";
 import SelectSearch, { useSelect } from "react-select-search";
 
 /**
@@ -11,27 +11,31 @@ const options = [
   { name: "Polish", value: "pl" },
 ];
 
-const SelectSearchComponent = () => {
-  const [value, setValue] = useState<string>("");
 
-  return (
-    <div>
-      <h1>{value}</h1>
-      <SelectSearch
-        options={options}
-        search={true}
-        value={value}
-        placeholder="Choose your language"
-        filterOptions={(options) => (query) =>
-          options.filter((item) =>
-            item.name.toLowerCase().includes(query.toLocaleLowerCase())
-          )}
-        onChange={(...args: any) => {
-          setValue(args[1].name);
-        }}
-      />
-    </div>
-  );
+
+const SelectSearchComponent = () => {
+  function handleSelect(data:any) {
+    setSelectedOptions(data);
+  }
+const [selectedOptions, setSelectedOptions] = useState();
+
+return (
+  <div>
+    
+    <SelectSearch 
+    options={[]}
+    placeholder="Select color"
+    search={true}
+    value={selectedOptions}
+    onChange={handleSelect}
+    filterOptions={(options) => (query) =>
+      options.filter((item) =>
+        item.name.toLowerCase().includes(query.toLocaleLowerCase())
+      )}
+      
+    ></SelectSearch>
+  </div>
+);
 };
 
 export default SelectSearchComponent;

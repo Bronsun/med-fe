@@ -1442,6 +1442,11 @@ functions-have-names@^1.2.2:
   resolved "https://registry.yarnpkg.com/functions-have-names/-/functions-have-names-1.2.3.tgz#0404fe4ee2ba2f607f0e0ec3c80bae994133b834"
   integrity sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==
 
+fuse.js@^3.4.5:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.6.1.tgz#7de85fdd6e1b3377c23ce010892656385fd9b10c"
+  integrity sha512-hT9yh/tiinkmirKrlv4KWOjztdoZo1mx9Qh4KvWqC7isoXwdUY3PNWUxceF4/qO9R6riA2C29jdTOeQOIROjgw==
+
 fuse.js@^6.6.0:
   version "6.6.2"
   resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-6.6.2.tgz#fe463fed4b98c0226ac3da2856a415576dc9a111"
@@ -2896,6 +2901,13 @@ react-router@6.3.0:
   integrity sha512-7Wh1DzVQ+tlFjkeo+ujvjSqSJmkt1+8JO+T5xklPlgrh70y7ogx75ODRW0ThWhY7S+6yEDks8TYrtQe/aoboBQ==
   dependencies:
     history "^5.2.0"
+
+react-select-search-nextjs@^3.0.9:
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/react-select-search-nextjs/-/react-select-search-nextjs-3.0.9.tgz#c5d7ec28043ef085654ee67b9300618ea5e3f500"
+  integrity sha512-J/3KP+698bb6CZ+npQab9Y1zD5CDDTfZNqwnXH0OvSJqX1KwiTEjIy37Qfmk5RbrbL3jhJhsUQeR1e3FhugEGg==
+  optionalDependencies:
+    fuse.js "^3.4.5"
 
 react-select-search@^3.0.10:
   version "3.0.10"

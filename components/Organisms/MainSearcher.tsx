@@ -4,6 +4,8 @@ import { GetQueryParameters } from "../../api/APIutilities";
 import { GetClinicsQuery } from "../../models/GetClinicsQuery";
 import InputComponent from "../Atoms/InputComponent";
 import { useRouter } from "next/router";
+import SelectSearch from "react-select-search";
+import SelectSearchComponent from "../Atoms/SelectSearchComponent";
 
 const MainSearcher = () => {
   const router = useRouter();
@@ -34,12 +36,8 @@ const MainSearcher = () => {
         <h1>Znajdź przychodnię i wolny termin</h1>
         <h3>Nie czekaj w kolejce i znajdź placówkę z najszybszym terminem.</h3>
       </div>
-      <InputComponent
-        className="nth3"
-        placeholder="Zacznij wpisywać nazwę świadczenia..."
-        onChange={(e: any) => setFields({ benefit: e.target.value })}
-        value={query.benefit}
-      />
+      <SelectSearchComponent/>
+      
       <InputComponent
         className="nth4"
         placeholder="Województwo"
