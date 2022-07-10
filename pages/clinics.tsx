@@ -42,7 +42,7 @@ const Clinics: NextPage = () => {
       <NavbarComponent style={flexStyle} />
       <CategoriesBar style={flexStyle} />
       <div className="clinicsContentWrapper">
-        <div className="clinicsLeftPanel">Reklama</div>
+        <div className="clinicsLeftPanel reklama">Reklama</div>
       <div className="clinicsMiddlePanel">
       <div className="clinicsMiddleContentWrapper">
         {service.state === ServiceState.InProgress && <LoadingComponent />}
