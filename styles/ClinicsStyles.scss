@@ -2,11 +2,12 @@
 
 @media (min-width: 600px){
     .clinicsContentWrapper{
-        grid-template-columns: 1fr 700px 1fr;
+        grid-template-columns: 300px 900px 1fr;
         overflow: auto;
     }
     .clinicsList{
-        width: 700px;
+        width: 900px;
+      
     }
     .clinicsMiddlePanel{
         flex: 1 1 auto;
@@ -34,7 +35,7 @@
 }
 
 .clinicsList{
-    min-height: -webkit-min-content;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: $lightBlueHover;
