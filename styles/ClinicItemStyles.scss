@@ -6,10 +6,20 @@
 }
 
 .clinicsContentWrapper{
+    display: grid;
+    grid-template-columns: 1fr 700px 1fr;
+    overflow: auto;
+}
+
+.clinicsMiddlePanel{
     flex: 1 1 auto;
     display: flex;
     overflow: auto;
     flex-direction: column;
+}
+
+.clinicsMiddleContentWrapper{
+    overflow: auto;
 }
 
 .clinicsList{

@@ -42,6 +42,9 @@ const Clinics: NextPage = () => {
       <NavbarComponent style={flexStyle} />
       <CategoriesBar style={flexStyle} />
       <div className="clinicsContentWrapper">
+        <div className="clinicsLeftPanel">Reklama</div>
+      <div className="clinicsMiddlePanel">
+      <div className="clinicsMiddleContentWrapper">
         {service.state === ServiceState.InProgress && <LoadingComponent />}
         {service.state === ServiceState.Fetched && (
           <ClinicsList clinicsList={clinicsList} />
@@ -55,6 +58,9 @@ const Clinics: NextPage = () => {
           style={flexStyle}
         />
       )}
+      </div>
+      <div className="clinicsRightPanel">Map</div>
+      </div>
     </div>
   );
 };
