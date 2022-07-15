@@ -48,12 +48,12 @@
     -webkit-box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
     -moz-box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
     box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
-    padding: 10px;
+    padding: 15px;
     color: $darkGreyFont;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto fit-content;
     grid-template-rows: auto auto auto;
-    grid-template-areas: "title phone" "blank date" "address statistics";
+    grid-template-areas: "title phone" "date date" "address address";
 }
 
 .noResults{
@@ -94,7 +94,6 @@
 
 .clinicIconP p{
     margin-left: 5px;
-    text-align: center;
     width: fit-content;
     font-size: 14px;
     font-weight: 500;
@@ -102,15 +101,36 @@
 
 .clinicsPhone{
     grid-area: phone;
+    justify-self: end;
 }
 
 .clinicsAddress{
     grid-area: address;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto max-content;
 }
 
 .clinicsDate{
     grid-area: date;
+    font-weight: 500;
+    font-size: 22px;
+    text-align: right;
+    margin: 12px 0;
 }
 
+.clinicsStatistics{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 8px;
+}
+
+.clinicsStatistics div{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 2px;
+}
+
+.clinicIcons{
+    text-align: center;
+}

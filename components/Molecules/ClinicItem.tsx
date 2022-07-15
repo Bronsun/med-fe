@@ -61,12 +61,27 @@ const ClinicItem = (props: ClinicItemProps) => {
             <Image src={"/toilet.png"} alt="toilet" width={24} height={24} />
           )}
         </div>
+
+        <div className="clinicsStatistics">
+          <div>
+            <div>
+              <Image
+                src={"/tileIcons/queue.png"}
+                alt="queue"
+                width={24}
+                height={24}
+              />
+            </div>
+            <p>154 osób</p>
+          </div>
+          <div>
+            <div>
+              <Image src={"/clock.png"} alt="queue" width={24} height={24} />
+            </div>
+            <p>12 dni</p>
+          </div>
+        </div>
       </div>
-      {/* <p>{props.clinic.address}</p>
-      <p>{props.clinic.benefits_for_children}</p>
-      <p>{props.clinic.city}</p>
-      <p>{props.clinic.covid_19}</p>
-      <p>{props.clinic.registry_number}</p> */}
     </div>
   );
 };
