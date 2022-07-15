@@ -21,6 +21,23 @@
     .clinicsList{
         overflow-y: scroll;
     }
+
+    .clinicsItem{
+        margin: 20px 20px 0 20px;
+        padding: 15px;
+        grid-template-columns: auto fit-content;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "title phone" "date date" "address address";
+    }
+    .clinicsAddress{
+        grid-template-columns: auto auto max-content;
+    }
+    .clinicsPhone{
+        justify-self: end;
+    }
+    .clinicIcons{
+        text-align: center;
+    }
 }
 
 .clinicsPageWrapper{
@@ -44,16 +61,11 @@
 .clinicsItem{
     border-radius: 10px;
     background-color: white;
-    margin: 20px 20px 0 20px;
     -webkit-box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
     -moz-box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
     box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
-    padding: 15px;
     color: $darkGreyFont;
     display: grid;
-    grid-template-columns: auto fit-content;
-    grid-template-rows: auto auto auto;
-    grid-template-areas: "title phone" "date date" "address address";
 }
 
 .noResults{
@@ -101,13 +113,11 @@
 
 .clinicsPhone{
     grid-area: phone;
-    justify-self: end;
 }
 
 .clinicsAddress{
     grid-area: address;
     display: grid;
-    grid-template-columns: auto auto max-content;
 }
 
 .clinicsDate{
@@ -131,6 +141,32 @@
     column-gap: 2px;
 }
 
-.clinicIcons{
-    text-align: center;
+@media screen and (max-width: 600px) {
+    .clinicsItem{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: "title" "phone" "address" "date";
+        margin: 10px 10px 0 10px;
+        padding: 10px;
+        row-gap: 5px;
+    }   
+
+    .clinicsAddress{
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        row-gap: 10px;
+    } 
+    .clinicIcons{
+        grid-row: 2;
+        grid-column: 1;
+    }
+    .clinicsStatistics{
+        grid-row: 2;
+        grid-column: 2;
+    }
+
+    .clinicsDate{
+        font-size: 20px;
+        margin: 4px 4px;
+    }
 }
