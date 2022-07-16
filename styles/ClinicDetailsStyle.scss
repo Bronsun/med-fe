@@ -1,0 +1,15 @@
+@import "colorTheme";
+
+.clinicsDetailsPageWrapper{
+    height:100vh;
+}
+
+.clinicsDetailsPanelWrapper{
+    display:grid;
+    grid-template-columns: 200px 1fr 200px;
+    flex: 1 1 auto;
+
+    .clinicDetailsMiddlePanel{
+        background-color: $lightBlueHover;
+    }
+}
