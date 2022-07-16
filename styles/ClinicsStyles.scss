@@ -148,6 +148,7 @@
     text-align: center;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .clinicsItem:hover .clinicsUnfold{
@@ -167,8 +168,8 @@
 @media screen and (max-width: 600px) {
     .clinicsItem{
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto;
-        grid-template-areas: "title" "phone" "address" "date";
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: "title" "phone" "address" "date" "unfold";
         margin: 10px 10px 0 10px;
         padding: 10px;
         row-gap: 5px;
