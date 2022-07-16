@@ -12,11 +12,12 @@
     .clinicsMiddlePanel{
         flex: 1 1 auto;
         display: flex;
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
         flex-direction: column;
     }
     .clinicsMiddleContentWrapper{
-        overflow: auto;
+        overflow-x: auto;
     }
     .clinicsList{
         overflow-y: scroll;
@@ -107,7 +108,6 @@
 .clinicIconP p{
     margin-left: 5px;
     width: fit-content;
-    font-size: 14px;
     font-weight: 500;
 }
 
@@ -118,6 +118,7 @@
 .clinicsAddress{
     grid-area: address;
     display: grid;
+    font-size: 14px;
 }
 
 .clinicsDate{

@@ -1,11 +1,32 @@
 import ClinicModel from "../../models/ClinicModel";
 import Image from "next/image";
+import { monthsArray } from "../../assets/months";
 
 interface ClinicItemProps {
   clinic: ClinicModel;
 }
 
 const ClinicItem = (props: ClinicItemProps) => {
+  const parseDateToString = (value: string) => {
+    const valArr = value.split("-");
+    valArr[1] = monthsArray[parseInt(valArr[1]) - 1];
+    return valArr.reverse().join(" ");
+  };
+
+  const parseLengthOfTheQueue = (value: number) => {
+    const noun = [1, 5, 6, 7, 8, 9, 0].includes(value % 10)
+      ? value == 1
+        ? " osoba"
+        : " osób"
+      : " osoby";
+    return value.toString() + noun;
+  };
+
+  const parseDaysInTheQueue = (value: number) => {
+    const noun = value == 1 ? " dzień" : " dni";
+    return value.toString() + noun;
+  };
+
   return (
     <div className="clinicsItem">
       <div className="clinicsTitle">
@@ -29,7 +50,11 @@ const ClinicItem = (props: ClinicItemProps) => {
         </a>
       )}
 
-      <div className="clinicsDate">12 sierpnia 2022</div>
+      {props.clinic.visit_date !== undefined && (
+        <div className="clinicsDate">
+          {parseDateToString(props.clinic.visit_date)}
+        </div>
+      )}
       <div className="clinicsAddress">
         <div className="clinicIconP">
           <div>
@@ -72,13 +97,13 @@ const ClinicItem = (props: ClinicItemProps) => {
                 height={24}
               />
             </div>
-            <p>154 osób</p>
+            <p>{parseLengthOfTheQueue(1)}</p>
           </div>
           <div>
             <div>
               <Image src={"/clock.png"} alt="queue" width={24} height={24} />
             </div>
-            <p>12 dni</p>
+            <p>{parseDaysInTheQueue(1)}</p>
           </div>
         </div>
       </div>

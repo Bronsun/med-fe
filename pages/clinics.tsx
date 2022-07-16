@@ -50,7 +50,7 @@ const Clinics: NextPage = () => {
               <ClinicsList clinicsList={clinicsList} />
             )}
           </div>
-          {service.result !== undefined &&
+          {service.result !== undefined && 
             service.result.total_page > 1 && (
               <Pagination
                 totalPages={service.result.total_page}
