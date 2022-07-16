@@ -25,7 +25,7 @@ const NavbarComponent = (props:NavbarComponentProps) => {
           className={`navbar-burger ${isNavbarOpened ? "is-active" : ""}`}
           aria-label="menu"
           aria-expanded="false"
-          data-target="navbarBasicExample"
+          data-target="mainNavbar"
           onClick={(e: any) => setIsNavbarOpened(!isNavbarOpened)}
         >
           <span aria-hidden="true"></span>
@@ -35,7 +35,7 @@ const NavbarComponent = (props:NavbarComponentProps) => {
       </div>
 
       <div
-        id="navbarBasicExample"
+        id="mainNavbar"
         className={`navbar-menu ${isNavbarOpened ? "is-active" : ""}`}
       >
         <div className="navbar-end">

@@ -1,188 +1,178 @@
-@import 'colorTheme';
+@import "colorTheme";
 
-@media (min-width: 600px){
-    .clinicsContentWrapper{
-        grid-template-columns: 300px 900px 1fr;
-        overflow: auto;
-    }
-    .clinicsList{
-        width: 900px;
-      
-    }
-    .clinicsMiddlePanel{
-        flex: 1 1 auto;
-        display: flex;
-        overflow-y: auto;
-        overflow-x: hidden;
-        flex-direction: column;
-    }
-    .clinicsMiddleContentWrapper{
-        overflow-x: auto;
-    }
-    .clinicsList{
-        overflow-y: scroll;
-    }
+@media (min-width: 600px) {
+  .clinicsContentWrapper {
+    grid-template-columns: 300px 900px 1fr;
+    overflow: auto;
+  }
 
-    .clinicsItem{
-        margin: 20px 20px 0 20px;
-        padding: 15px;
-        grid-template-columns: auto fit-content;
-        grid-template-rows: auto auto auto;
-        grid-template-areas: "title phone" "date date" "address address";
-        row-gap: 10px;
-    }
-    .clinicsAddress{
-        grid-template-columns: auto auto max-content;
-    }
-    .clinicsPhone{
-        justify-self: end;
-    }
-    .clinicIcons{
-        text-align: center;
-    }
-}
-
-.clinicsPageWrapper{
-    height: 100vh;
+  .clinicsList {
+    width: 900px;
+    overflow-y: scroll;
+  }
+  .clinicsMiddlePanel {
+    flex: 1 1 auto;
     display: flex;
-    flex-flow: column;
-}
-
-.clinicsContentWrapper{
-    display: grid;
-    border-top: 1px solid $lightGreyHorizontalLine;
-}
-
-.clinicsList{
-    min-height: 100vh;
-    display: flex;
+    overflow-y: auto;
+    overflow-x: hidden;
     flex-direction: column;
-    background-color: $lightBlueHover;
+  }
+  .clinicsMiddleContentWrapper {
+    overflow-x: auto;
+  }
+
+  .clinicsItem {
+    margin: 20px 20px 0 20px;
+    padding: 15px;
+    grid-template-columns: auto fit-content;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "title phone" "date date" "address address";
+    row-gap: 10px;
+
+    .clinicsAddress {
+      grid-template-columns: auto auto max-content;
+    }
+    .clinicsPhone {
+      justify-self: end;
+    }
+    .clinicIcons {
+      text-align: center;
+    }
+  }
 }
 
-.clinicsItem{
-    border-radius: 10px;
-    background-color: white;
-    -webkit-box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
-    -moz-box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
-    box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
-    color: $darkGreyFont;
-    display: grid;
+.clinicsPageWrapper {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
 }
 
-.noResults{
-    width:100%;
-    text-align: center;
-    font-weight: 600;
-    font-size: 20px;
-    margin-top: 40px;
+.clinicsContentWrapper {
+  display: grid;
+  border-top: 1px solid $lightGreyHorizontalLine;
 }
 
-.clinicsItem:last-child{
-    margin-bottom: 20px;
+.clinicsList {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $lightBlueHover;
 }
 
-.clinicsItem .clinicNfzName{
+.clinicsItem {
+  border-radius: 10px;
+  background-color: white;
+  -webkit-box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
+  -moz-box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
+  box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
+  color: $darkGreyFont;
+  display: grid;
+
+  .clinicNfzName {
     font-weight: 500;
-}
-
-.clinicsItem .clinicPrivateName{
+  }
+  .clinicPrivateName {
     color: $lightGreyText;
-}
-
-.clinicsTitle{
+  }
+  .clinicsTitle {
     display: grid;
     grid-template-columns: 80px 1fr;
     grid-area: title;
-}
-
-.clinicsTitle div:first-child{
-    margin: auto 10px;
-}
-
-.clinicIconP{
+    div:first-child {
+      margin: auto 10px;
+    }
+  }
+  .clinicIconP {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-}
 
-.clinicIconP p{
-    margin-left: 5px;
-    width: fit-content;
-    font-weight: 500;
-}
-
-.clinicsPhone{
+    p {
+      margin-left: 5px;
+      width: fit-content;
+      font-weight: 500;
+    }
+  }
+  .clinicsPhone {
     grid-area: phone;
-}
-
-.clinicsAddress{
+  }
+  .clinicsAddress {
     grid-area: address;
     display: grid;
     font-size: 14px;
-}
-
-.clinicsDate{
+  }
+  .clinicsDate {
     grid-area: date;
     font-weight: 500;
     font-size: 22px;
     text-align: right;
     margin: 12px 0;
 
-    button{
-        border: solid 1px transparent;
-        background-color: $blueButton;
-        opacity: 1;
-        color:white;
-        border-radius: 10px;
-        padding: 8px 15px;
-        font-size: 16px;
-        cursor: pointer
+    button {
+      border: solid 1px transparent;
+      background-color: $blueButton;
+      opacity: 1;
+      color: white;
+      border-radius: 10px;
+      padding: 8px 15px;
+      font-size: 16px;
+      cursor: pointer;
     }
-    button:hover{
-        opacity: 0.9;
+    button:hover {
+      opacity: 0.9;
     }
-}
-
-.clinicsStatistics{
+  }
+  .clinicsStatistics {
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 8px;
+
+    div {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      column-gap: 2px;
+    }
+  }
 }
 
-.clinicsStatistics div{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    column-gap: 2px;
+.noResults {
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+.clinicsItem:last-child {
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 600px) {
-    .clinicsItem{
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto;
-        grid-template-areas: "title" "phone" "address" "date";
-        margin: 10px 10px 0 10px;
-        padding: 10px;
-        row-gap: 5px;
-    }   
+  .clinicsItem {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "title" "phone" "address" "date";
+    margin: 10px 10px 0 10px;
+    padding: 10px;
+    row-gap: 5px;
 
-    .clinicsAddress{
-        grid-template-columns: auto auto;
-        grid-template-rows: auto auto;
-        row-gap: 10px;
-    } 
-    .clinicIcons{
-        grid-row: 2;
-        grid-column: 1;
+    .clinicsAddress {
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+      row-gap: 10px;
     }
-    .clinicsStatistics{
-        grid-row: 2;
-        grid-column: 2;
+    .clinicIcons {
+      grid-row: 2;
+      grid-column: 1;
     }
-
-    .clinicsDate{
-        font-size: 20px;
-        margin: 4px 4px;
+    .clinicsStatistics {
+      grid-row: 2;
+      grid-column: 2;
     }
+    .clinicsDate {
+      font-size: 20px;
+      margin: 4px 4px;
+    }
+  }
 }

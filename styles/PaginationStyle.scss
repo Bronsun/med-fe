@@ -1,28 +1,28 @@
-@import 'colorTheme';
+@import "colorTheme";
 
-.pagination{
-    background-color: transparent !important;
-    padding: 10px 20px;
-    border-top: 1px solid $lightGreyHorizontalLine;
-    -webkit-box-shadow: 0px 2px 6px 0px inset rgba(126, 126, 133, 0.15);
-    -moz-box-shadow: 0px 2px 6px 0px inset rgba(126, 126, 133, 0.15);
-    box-shadow: 0px 2px 6px 0px inset rgba(126, 126, 133, 0.15);
-}
+.pagination {
+  background-color: transparent !important;
+  padding: 10px 20px;
+  border-top: 1px solid $lightGreyHorizontalLine;
+  -webkit-box-shadow: 0px 2px 6px 0px inset rgba(126, 126, 133, 0.15);
+  -moz-box-shadow: 0px 2px 6px 0px inset rgba(126, 126, 133, 0.15);
+  box-shadow: 0px 2px 6px 0px inset rgba(126, 126, 133, 0.15);
 
-.pagination button{
+  button {
     background-color: transparent;
     border-color: $lightGreyText;
     color: $darkGreyFont;
     border-radius: 40px;
-}
+  }
 
-.pagination button:hover{
+  button:hover {
     -webkit-box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
     -moz-box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
     box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
-}
+  }
 
-.pagination .is-current{
+  .is-current {
     background-color: $blueButton;
     border-color: $blueButton;
+  }
 }

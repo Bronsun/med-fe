@@ -30,34 +30,31 @@ const MainSearcher = () => {
 
   return (
     <div className="mainSearcherWrapper">
-      <div className="nth1">
+      <div>
         <h1>Znajdź przychodnię i wolny termin</h1>
         <h3>Nie czekaj w kolejce i znajdź placówkę z najszybszym terminem.</h3>
       </div>
       <InputComponent
-        className="nth3"
         placeholder="Zacznij wpisywać nazwę świadczenia..."
         onChange={(e: any) => setFields({ benefit: e.target.value })}
         value={query.benefit}
       />
       <InputComponent
-        className="nth4"
         placeholder="Województwo"
         onChange={(e: any) => setFields({ voivodeship: e.target.value })}
         value={query.voivodeship}
       />
       <InputComponent
-        className="nth5"
         placeholder="Miasto"
         onChange={(e: any) => setFields({ city: e.target.value })}
         value={query.city}
       />
-      <div className="control nth6">
+      <div className="control">
         <button className="button searchbutton" onClick={searchClinics}>
           Wyszukaj
         </button>
       </div>
-      <div className="control nth7">
+      <div className="control">
         <button
           className="button moreoptionsbutton"
           onClick={(e: any) => setOpenedModal(true)}
