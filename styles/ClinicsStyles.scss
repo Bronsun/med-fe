@@ -27,8 +27,9 @@
         margin: 20px 20px 0 20px;
         padding: 15px;
         grid-template-columns: auto fit-content;
-        grid-template-rows: auto auto auto;
-        grid-template-areas: "title phone" "date date" "address address";
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: "title phone" "date date" "address address" "unfold unfold";
+        row-gap: 10px;
     }
     .clinicsAddress{
         grid-template-columns: auto auto max-content;
@@ -141,6 +142,27 @@
     align-items: center;
     column-gap: 2px;
 }
+
+.clinicsUnfold{
+    grid-area: unfold;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+}
+
+.clinicsItem:hover .clinicsUnfold{
+    animation-name: bounceAlpha;
+    animation-duration: 1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+@keyframes bounceAlpha {
+    0% {opacity: 1; transform: translateY(0px) scale(1);}
+    25%{opacity: 1; transform:translateY(3px) scale(0.95);}
+    50%{opacity: 1; transform:translateY(6px) scale(0.9);}
+    75% {opacity: 1; transform: translateY(0px) scale(1);}
+  }
 
 @media screen and (max-width: 600px) {
     .clinicsItem{
