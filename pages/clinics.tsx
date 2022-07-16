@@ -10,6 +10,7 @@ import Pagination from "../components/Molecules/Pagination";
 import CategoriesBar from "../components/Organisms/CategoriesBar";
 import NavbarComponent from "../components/Organisms/Navbar";
 import ClinicModel from "../models/ClinicModel";
+import ErrorComponent from "../components/Atoms/ErrorComponent";
 
 const Clinics: NextPage = () => {
   const router = useRouter();
@@ -30,7 +31,6 @@ const Clinics: NextPage = () => {
   useEffect(() => {
     if (service.state === ServiceState.Fetched)
       setClinicsList(service.result.data);
-    //if(service.state===ServiceState.Error)  zrób coś fajnego
   }, [service.state]);
 
   const flexStyle = {
@@ -46,19 +46,19 @@ const Clinics: NextPage = () => {
         <div className="clinicsMiddlePanel">
           <div className="clinicsMiddleContentWrapper">
             {service.state === ServiceState.InProgress && <LoadingComponent />}
+            {service.state === ServiceState.Error && <ErrorComponent/>}
             {service.state === ServiceState.Fetched && (
               <ClinicsList clinicsList={clinicsList} />
             )}
           </div>
-          {service.result !== undefined && 
-            service.result.total_page > 1 && (
-              <Pagination
-                totalPages={service.result.total_page}
-                currentPage={currentPage}
-                setCurrentPage={(value: number) => setCurrentPage(value)}
-                style={flexStyle}
-              />
-            )}
+          {service.result !== undefined && service.result.total_page > 1 && (
+            <Pagination
+              totalPages={service.result.total_page}
+              currentPage={currentPage}
+              setCurrentPage={(value: number) => setCurrentPage(value)}
+              style={flexStyle}
+            />
+          )}
         </div>
         <div className="clinicsRightPanel">Map</div>
       </div>

@@ -1,6 +1,9 @@
-
-const LoadingComponent=()=>{
-    return <div>Loading...</div>
-}
+const LoadingComponent = () => {
+  return (
+    <div className="loader-wrapper">
+      <div className="loader is-loading"></div>
+    </div>
+  );
+};
 
 export default LoadingComponent;

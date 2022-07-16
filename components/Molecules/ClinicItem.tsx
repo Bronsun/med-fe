@@ -50,11 +50,17 @@ const ClinicItem = (props: ClinicItemProps) => {
         </a>
       )}
 
-      {props.clinic.visit_date !== undefined && props.clinic.visit_date.length !== 0 && (
-        <div className="clinicsDate">
-          {parseDateToString(props.clinic.visit_date)}
-        </div>
-      )}
+      <div className="clinicsDate">
+        {props.clinic.visit_date !== undefined &&
+          props.clinic.visit_date.length !== 0 && (
+            <p>{parseDateToString(props.clinic.visit_date)}</p>
+          )}
+        {(props.clinic.visit_date == undefined ||
+          props.clinic.visit_date.length === 0) && (
+          <button>Dostępne usługi</button>
+        )}
+      </div>
+
       <div className="clinicsAddress">
         <div className="clinicIconP">
           <div>
@@ -107,8 +113,6 @@ const ClinicItem = (props: ClinicItemProps) => {
           </div>
         </div>
       </div>
-      {props.clinic.visit_date.length === 0 && <button className="clinicsUnfold">
-        <Image src="/expand-arrow.png" alt="rozwiń" width={34} height={24}/></button>}
     </div>
   );
 };

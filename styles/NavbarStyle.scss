@@ -78,6 +78,7 @@
         border:none;
         margin-top:-14px;
         opacity: 0.6;
+        cursor: pointer;
     }
 
     .categoriesTileDiv:hover{
@@ -118,5 +119,45 @@
     .categoriesTileDiv{
         max-width: min-content;
         display: inline-block;
+    }
+}
+
+.loader-wrapper {
+    height: 100vh;
+    width: 100%;
+    transition: opacity .3s;
+    border-radius: 6px;
+    background-color: $lightBlueHover;
+
+        .loader {
+            height: 80px;
+            width: 80px;
+            margin: auto;
+        }
+}
+
+.error-wrapper{
+    height: 100vh;
+    width: 100%;
+    background-color: $lightBlueHover;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 10%;
+
+    button{
+        background-color: $blueButton;
+        color: white;
+        border: $blueButton 1px solid;
+        border-radius: 25px;
+        padding: 8px 12px;
+        margin-top: 10px;
+        font-size: 22px;
+        cursor: pointer;
+        transition: background-color ease 0.2s;
+    }
+
+    button:hover{
+        background-color: $blueButtonHover;
     }
 }
