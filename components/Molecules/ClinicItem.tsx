@@ -1,6 +1,7 @@
 import ClinicModel from "../../models/ClinicModel";
 import Image from "next/image";
 import { monthsArray } from "../../assets/months";
+import router from "next/router";
 
 interface ClinicItemProps {
   clinic: ClinicModel;
@@ -25,6 +26,13 @@ const ClinicItem = (props: ClinicItemProps) => {
   const parseDaysInTheQueue = (value: number) => {
     const noun = value == 1 ? " dzień" : " dni";
     return value.toString() + noun;
+  };
+
+  const goToClinicDetails = () => {
+    router.push(
+      { pathname: "/clinicDetails", query: `id=${props.clinic.id}` },
+      props.clinic.id
+    );
   };
 
   return (
@@ -57,7 +65,7 @@ const ClinicItem = (props: ClinicItemProps) => {
           )}
         {(props.clinic.visit_date == undefined ||
           props.clinic.visit_date.length === 0) && (
-          <button>Dostępne usługi</button>
+          <button onClick={goToClinicDetails}>Dostępne usługi</button>
         )}
       </div>
 
