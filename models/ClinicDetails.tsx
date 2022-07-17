@@ -5,7 +5,7 @@ export default interface ClinicDetails{
     clinic_benefits: ClinicBenefit[];
 }
 
-interface ClinicBenefit{
+export interface ClinicBenefit{
     name: string;
     average_period: number;
     awaiting: number;

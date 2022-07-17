@@ -5,6 +5,7 @@ import ClinicTitle from "../Atoms/ClinicTitle";
 import ClinicPhone from "../Atoms/ClinicPhone";
 import ClinicStatistics from "../Atoms/ClinicStatistics";
 import ClinicAddress from "../Atoms/ClinicAddress";
+import BenefitsList from "../Atoms/BenefitsList";
 
 const ClinicDetailsItem = (clinic: ClinicDetails) => {
   return (
@@ -14,6 +15,7 @@ const ClinicDetailsItem = (clinic: ClinicDetails) => {
         private_name={clinic.clinic_info.private_name}
       />
 
+      <div className="detailsInfo">
       {clinic.clinic_info.phone !== undefined && (
         <ClinicPhone phone={clinic.clinic_info.phone} />
       )}
@@ -22,6 +24,7 @@ const ClinicDetailsItem = (clinic: ClinicDetails) => {
           city={clinic.clinic_info.city}
           address={clinic.clinic_info.address}
         />
+      </div>
 
         <ClinicIconsBar
           elevator={clinic.clinic_info.elevator}
@@ -29,9 +32,9 @@ const ClinicDetailsItem = (clinic: ClinicDetails) => {
           ramp={clinic.clinic_info.ramp}
           toilet={clinic.clinic_info.toilet}
         />
-
-        <ClinicStatistics queue={1} days={12} />
       </div>
+      <BenefitsList benefits={clinic.clinic_benefits} />
+      <div className="detailsMap">Map</div>
     </div>
   );
 };

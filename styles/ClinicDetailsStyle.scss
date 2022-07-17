@@ -1,15 +1,90 @@
 @import "colorTheme";
 
-.clinicsDetailsPageWrapper{
-    height:100vh;
+.clinicsDetailsPageWrapper {
+  height: 100vh;
 }
 
-.clinicsDetailsPanelWrapper{
-    display:grid;
-    grid-template-columns: 200px 1fr 200px;
-    flex: 1 1 auto;
+.clinicsDetailsPanelWrapper {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  flex: 1 1 auto;
 
-    .clinicDetailsMiddlePanel{
-        background-color: $lightBlueHover;
+  .clinicDetailsMiddlePanel {
+    background-color: $lightBlueHover;
+    display: flex;
+    flex-direction: column;
+
+    .clinicDetailsWrapper {
+      border-radius: 10px;
+      background-color: white;
+      -webkit-box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
+      -moz-box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
+      box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
+      color: $darkGreyFont;
+      margin: 40px;
+      padding: 40px;
+      flex: 1 0 auto;
+
+      .clinicsTitle{
+        display: grid;
+        grid-template-columns: max-content auto;
+        grid-column-gap: 20px;
+        align-items: center;
+
+        div p:nth-child(1){
+            font-weight: 500;
+        }
+        div p{
+            font-size: 18px;
+        }
+      }
+      .detailsInfo{
+        margin: 10px 0 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: baseline;
+        border-bottom: solid 1px $lightGreyHorizontalLine;
+      
+      .clinicsPhone{
+        display: grid;
+        grid-template-columns: max-content auto;
+        grid-column-gap: 10px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 8px;
+      }
+
+      .clinicsAddress div{
+        display: grid;
+        grid-template-columns: max-content auto;
+        grid-column-gap: 10px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 8px;
+      }
+
+      .clinicIcons{
+        text-align: center;
+      }
     }
+
+      table{
+        width: 80%;
+        margin: auto;
+        vertical-align: middle;
+        text-align: left;
+
+        td{
+            padding: 10px 5px;
+        }
+
+        tr:nth-child(even){
+            background-color: rgba(235, 234, 234, 0.8);
+        }
+        tr:nth-child(odd){
+            background-color: rgba(235, 234, 234, 0.4);
+        }
+      }
+    }
+  }
 }
