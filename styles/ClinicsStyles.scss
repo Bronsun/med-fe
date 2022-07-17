@@ -2,12 +2,12 @@
 
 @media (min-width: 600px) {
   .clinicsContentWrapper {
-    grid-template-columns: 300px 900px 1fr;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
     overflow: auto;
   }
 
   .clinicsList {
-    width: 900px;
+    width: 100%;
     overflow-y: scroll;
   }
   .clinicsMiddlePanel {
@@ -58,6 +58,14 @@
   flex-direction: column;
   background-color: $lightBlueHover;
 }
+.popupsMarkerItem{
+    border-radius: 10px;
+  background-color: white;
+ 
+  color: $darkGreyFont;
+  display: grid;
+  
+  }
 
 .clinicsItem {
   border-radius: 10px;
@@ -175,4 +183,20 @@
       margin: 4px 4px;
     }
   }
+  .popupsMarkerItem{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "title" "phone" "address" "date";
+    margin: 10px 10px 0 10px;
+    padding: 10px;
+    row-gap: 5px;
+  }
+}
+
+.map{
+    
+    border-radius: 20px;
+    width: 30vw;
+    height: 50%;
+    margin: 20px;
 }
