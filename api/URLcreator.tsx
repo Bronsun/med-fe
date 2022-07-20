@@ -14,3 +14,14 @@ export const GetBenefitsURL = (
 export const GetCitiesURL = (
   inputValue: string
 ) => apiURL + "/search/city?name=" + inputValue;
+
+export const GetPrivateNameURL = (
+    inputValue: string
+ ) => apiURL + "/search/privateName?name="+inputValue;
+
+ export const GetAddressURL = (
+    inputValue: string
+ ) => apiURL + "/search/address?name="+inputValue;
+
+ export const GetVoivodeshipURL = (
+ ) => apiURL + "/search/voivodeship";

@@ -5,7 +5,7 @@ import { GetClinicsQuery } from "../../models/GetClinicsQuery";
 import InputComponent from "../Atoms/InputComponent";
 import { useRouter } from "next/router";
 import SelectSearchComponent from "../Atoms/SelectSearchComponent";
-import { GetBenefitsURL, GetCitiesURL } from "../../api/URLcreator";
+import { GetBenefitsURL, GetCitiesURL, GetPrivateNameURL, GetAddressURL, GetVoivodeshipURL } from "../../api/URLcreator";
 
 const MainSearcher = () => {
   const router = useRouter();
@@ -55,25 +55,24 @@ const MainSearcher = () => {
       />
       
       <div className="mainSearcherGrid">
-    
-        <InputComponent
-          placeholder="Województwo"
-          onChange={(e: any) =>
-            setFields({
-              voivodeship: e.target.value,
-            })
-          }
-          value={query.voivodeship}
-        />
-      <InputComponent
-          placeholder="Województwo"
-          onChange={(e: any) =>
-            setFields({
-              city: e.target.value,
-            })
-          }
-          value={query.city}
-        />
+        
+      <SelectSearchComponent
+        URLcreator={GetVoivodeshipURL}
+        placeholder="Województwo"
+        onChange={(value: string) =>
+          setFields({voivodeship: value })
+        }
+        selectedValue={query.voivodeship}
+      />
+       
+          <SelectSearchComponent
+        URLcreator={GetCitiesURL}
+        placeholder="Miasto"
+        onChange={(value: string) =>
+          setFields({ city: value })
+        }
+        selectedValue={query.city}
+      />
         <div className="control">
           <button
             className="button searchbutton"
@@ -138,40 +137,38 @@ const MainSearcher = () => {
         }
         selectedValue={query.benefit}
       />
-          <InputComponent
-            placeholder="Województwo"
-            onChange={(e: any) =>
-              setFields({
-                voivodeship: e.target.value,
-              })
-            }
-            value={query.voivodeship}
-          />
-          <InputComponent
-            placeholder="Miasto"
-            onChange={(e: any) =>
-              setFields({ city: e.target.value })
-            }
-            value={query.city}
-          />
-          <InputComponent
-            placeholder="Nazwa przychodni/szpitala"
-            onChange={(e: any) =>
-              setFields({
-                private_name: e.target.value,
-              })
-            }
-            value={query.private_name}
-          />
-          <InputComponent
-            placeholder="Ulica"
-            onChange={(e: any) =>
-              setFields({
-                address: e.target.value,
-              })
-            }
-            value={query.address}
-          />
+     <SelectSearchComponent
+        URLcreator={GetVoivodeshipURL}
+        placeholder="Województwo"
+        onChange={(value: string) =>
+          setFields({voivodeship: value })
+        }
+        selectedValue={query.voivodeship}
+      />
+             <SelectSearchComponent
+        URLcreator={GetCitiesURL}
+        placeholder="Miasto"
+        onChange={(value: string) =>
+          setFields({ city: value })
+        }
+        selectedValue={query.city}
+      />
+           <SelectSearchComponent
+        URLcreator={GetPrivateNameURL}
+        placeholder="Nazwa przychodni/kliniki"
+        onChange={(value: string) =>
+          setFields({ private_name: value })
+        }
+        selectedValue={query.private_name}
+      />
+        <SelectSearchComponent
+        URLcreator={GetAddressURL}
+        placeholder="Ulica"
+        onChange={(value: string) =>
+          setFields({ address: value })
+        }
+        selectedValue={query.address}
+      />
           <div className="field">
             <div className="control">
               <label className="checkbox">

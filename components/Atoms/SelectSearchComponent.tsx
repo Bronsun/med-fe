@@ -20,7 +20,7 @@ const SelectSearchComponent = (
   };
 
   const onChange = (value: any) => {
-    props.onChange(value.Name);
+    props.onChange(value.value);
     setSelectedValue(value);
   };
 
@@ -42,8 +42,8 @@ const SelectSearchComponent = (
         className="react-select-container"
         classNamePrefix="react-select"
         placeholder={props.placeholder}
-        getOptionLabel={(e: any) => e.Name}
-        getOptionValue={(e: any) => e.Name}
+        getOptionLabel={(e: any) => e.value }
+        getOptionValue={(e: any) => e.value}
         onInputChange={handleInputChange}
         onChange={onChange}
       ></SelectSearch>

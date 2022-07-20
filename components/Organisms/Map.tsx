@@ -33,8 +33,9 @@ const Map = (props: MapProps) => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png"
       />
-      {props.clinicsList.map(
+      {Array.isArray(props.clinicsList)? props.clinicsList.map(
         (clinic: ClinicModel, index) => (
+      
           <Marker
             position={[
               clinic.latitude,
@@ -49,7 +50,7 @@ const Map = (props: MapProps) => {
             </Popup>
           </Marker> 
         )
-      )}
+      ): null}
     </MapContainer>
   );
 };
