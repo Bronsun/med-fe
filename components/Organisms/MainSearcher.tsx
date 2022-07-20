@@ -65,14 +65,15 @@ const MainSearcher = () => {
           }
           value={query.voivodeship}
         />
-      <SelectSearchComponent
-        URLcreator={GetCitiesURL}
-        placeholder="Miasto"
-        onChange={(value: string) =>
-          setFields({ city: value })
-        }
-        selectedValue={query.city}
-      />
+      <InputComponent
+          placeholder="Województwo"
+          onChange={(e: any) =>
+            setFields({
+              city: e.target.value,
+            })
+          }
+          value={query.city}
+        />
         <div className="control">
           <button
             className="button searchbutton"

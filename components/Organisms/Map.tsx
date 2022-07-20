@@ -9,11 +9,7 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 import ClinicModel from "../../models/ClinicModel";
 import PopupMarker from "../Molecules/PopupMarker";
-
-
 import L, {icon} from "leaflet"
-
-
 
 interface MapProps {
   clinicsList: ClinicModel[];
@@ -24,14 +20,12 @@ const ICON = icon({
   });
 
 const Map = (props: MapProps) => {
-  
-
   return (
     <MapContainer
       center={[
         51.760883776007546, 19.44894346759784,
       ]}
-      zoom={6}
+      zoom={5}
       scrollWheelZoom={true}
       className="map"
     >
@@ -39,10 +33,8 @@ const Map = (props: MapProps) => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png"
       />
-     
       {props.clinicsList.map(
         (clinic: ClinicModel, index) => (
-            
           <Marker
             position={[
               clinic.latitude,
@@ -55,12 +47,9 @@ const Map = (props: MapProps) => {
             <Popup>
               <PopupMarker clinic={clinic} />
             </Popup>
-          </Marker>
-         
+          </Marker> 
         )
-       
       )}
-     
     </MapContainer>
   );
 };
