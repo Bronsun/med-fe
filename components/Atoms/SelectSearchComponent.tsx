@@ -1,35 +1,52 @@
+import axios from "axios";
 import { useState } from "react";
-import SelectSearch, { useSelect } from "react-select-search";
+import SelectSearch from "react-select/async";
 
-/**
- * The options array should contain objects.
- * Required keys are "name" and "value" but you can have and use any number of key/value pairs.
- */
-const options = [
-  { name: "Swedish", value: "sv" },
-  { name: "English", value: "en" },
-  { name: "Polish", value: "pl" },
-];
+interface SelectComponentProps {
+  URLcreator: (value: string) => string;
+  onChange: (value: any) => void;
+  selectedValue: string;
+  placeholder: string;
+}
 
-const SelectSearchComponent = () => {
-  const [value, setValue] = useState<string>("");
+const SelectSearchComponent = (
+  props: SelectComponentProps
+) => {
+  const [inputValue, setValue] = useState("");
+  const [selectedValue, setSelectedValue] = useState(null);
+
+  const handleInputChange = (value: string) => {
+    setValue(value);
+  };
+
+  const onChange = (value: any) => {
+    props.onChange(value.value);
+    setSelectedValue(value);
+  };
+
+  const loadOptions = async (
+    inputValue: string
+  ) =>
+    axios
+      .get(props.URLcreator(inputValue))
+      .then((res) => {
+        return res.data.response;
+      });
 
   return (
     <div>
-      <h1>{value}</h1>
       <SelectSearch
-        options={options}
-        search={true}
-        value={value}
-        placeholder="Choose your language"
-        filterOptions={(options) => (query) =>
-          options.filter((item) =>
-            item.name.toLowerCase().includes(query.toLocaleLowerCase())
-          )}
-        onChange={(...args: any) => {
-          setValue(args[1].name);
-        }}
-      />
+        defaultOptions
+        value={selectedValue}
+        loadOptions={loadOptions}
+        className="react-select-container"
+        classNamePrefix="react-select"
+        placeholder={props.placeholder}
+        getOptionLabel={(e: any) => e.value }
+        getOptionValue={(e: any) => e.value}
+        onInputChange={handleInputChange}
+        onChange={onChange}
+      ></SelectSearch>
     </div>
   );
 };

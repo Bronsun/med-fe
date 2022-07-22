@@ -1,5 +1,4 @@
 import ClinicModel from "../../models/ClinicModel";
-import Image from "next/image";
 import router from "next/router";
 import { parseDateToString } from "../utilities";
 import ClinicIconsBar from "../Atoms/ClinicIconsBar";

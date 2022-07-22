@@ -11,6 +11,8 @@ import CategoriesBar from "../components/Organisms/CategoriesBar";
 import NavbarComponent from "../components/Organisms/Navbar";
 import ClinicModel from "../models/ClinicModel";
 import ErrorComponent from "../components/Atoms/ErrorComponent";
+import Map from "../components/Organisms/Map"
+import dynamic from "next/dynamic";
 
 const Clinics: NextPage = () => {
   const router = useRouter();
@@ -37,6 +39,7 @@ const Clinics: NextPage = () => {
     flex: "0 0 auto",
   };
 
+  const MyMap = dynamic(() => import('../components/Organisms/Map'), { ssr: false });
   return (
     <div className="clinicsPageWrapper">
       <NavbarComponent style={flexStyle} />
@@ -60,7 +63,8 @@ const Clinics: NextPage = () => {
             />
           )}
         </div>
-        <div>Map</div>
+        <div>
+          <MyMap clinicsList={clinicsList}/></div>
       </div>
     </div>
   );

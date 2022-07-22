@@ -1,9 +1,7 @@
 import ClinicIconsBar from "../Atoms/ClinicIconsBar";
-import Image from "next/image";
 import ClinicDetails from "../../models/ClinicDetails";
 import ClinicTitle from "../Atoms/ClinicTitle";
 import ClinicPhone from "../Atoms/ClinicPhone";
-import ClinicStatistics from "../Atoms/ClinicStatistics";
 import ClinicAddress from "../Atoms/ClinicAddress";
 import BenefitsList from "../Atoms/BenefitsList";
 
