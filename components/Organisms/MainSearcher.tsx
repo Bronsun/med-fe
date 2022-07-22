@@ -2,7 +2,6 @@ import Image from "next/image";
 import { useState } from "react";
 import { GetQueryParameters } from "../../api/APIutilities";
 import { GetClinicsQuery } from "../../models/GetClinicsQuery";
-import InputComponent from "../Atoms/InputComponent";
 import { useRouter } from "next/router";
 import SelectSearchComponent from "../Atoms/SelectSearchComponent";
 import { GetBenefitsURL, GetCitiesURL, GetPrivateNameURL, GetAddressURL, GetVoivodeshipURL } from "../../api/URLcreator";
