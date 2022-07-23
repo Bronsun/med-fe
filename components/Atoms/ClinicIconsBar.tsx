@@ -7,21 +7,63 @@ interface ClinicIconsBarProps {
   toilet: boolean;
 }
 
-const ClinicIconsBar = (props: ClinicIconsBarProps) => {
+const ClinicIconsBar = (
+  props: ClinicIconsBarProps
+) => {
   return (
     <div className="clinicIcons">
-      {props.car_park && (
-        <Image src={"/parking.png"} alt="phone" width={24} height={24} />
-      )}
-      {props.elevator && (
-        <Image src={"/elevator.png"} alt="elevator" width={24} height={24} />
-      )}
-      {props.ramp && (
-        <Image src={"/ramp.png"} alt="ramp" width={24} height={24} />
-      )}
-      {props.toilet && (
-        <Image src={"/toilet.png"} alt="toilet" width={24} height={24} />
-      )}
+      <Image
+        src={"/parking.png"}
+        alt="parking"
+        width={24}
+        height={24}
+        title={
+          props.car_park
+            ? "Parking"
+            : "Brak parkingu"
+        }
+        className={
+          !props.car_park ? "iconNotActive" : ""
+        }
+      />
+      <Image
+        src={"/elevator.png"}
+        alt="elevator"
+        width={24}
+        height={24}
+        title={
+          props.elevator ? "Winda" : "Brak windy"
+        }
+        className={
+          !props.elevator ? "iconNotActive" : ""
+        }
+      />
+      <Image
+        src={"/ramp.png"}
+        alt="ramp"
+        width={24}
+        height={24}
+        title={
+          props.ramp ? "Rampa" : "Brak rampy"
+        }
+        className={
+          !props.ramp ? "iconNotActive" : ""
+        }
+      />
+      <Image
+        src={"/toilet.png"}
+        alt="toilet"
+        width={24}
+        height={24}
+        title={
+          props.toilet
+            ? "Toaleta"
+            : "Brak toalety"
+        }
+        className={
+          !props.toilet ? "iconNotActive" : ""
+        }
+      />
     </div>
   );
 };

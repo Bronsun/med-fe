@@ -54,7 +54,7 @@ const ClinicItem = (props: ClinicItemProps) => {
           toilet={props.clinic.toilet}
         />
 
-        <ClinicStatistics queue={1} days={12} />
+        <ClinicStatistics queue={props.clinic.awaiting} days={props.clinic.average_period} />
       </div>
     </div>
   );
