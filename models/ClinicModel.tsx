@@ -18,4 +18,6 @@ export default interface ClinicModel {
   phone: number;
   nip: string;
   regon: string;
+  average_period: number;
+  awaiting: number;
 }
