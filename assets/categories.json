@@ -35,8 +35,23 @@
         "iconPath":"/categoryIcons/cardiology.png"
     },
     {
-        "name":"psychiaria",
+        "name":"psychiatria",
         "iconPath":"/categoryIcons/psychiatry.png"
+    },{
+        "name":"dermatologia",
+        "iconPath":"/categoryIcons/dermatology.png"
+    },
+    {
+        "name":"stomatologia",
+        "iconPath":"/categoryIcons/stomatology.png"
+    },
+    {
+        "name":"neurologia",
+        "iconPath":"/categoryIcons/neurology.png"
+    },
+    {
+        "name":"ortopedia",
+        "iconPath":"/categoryIcons/ortopedy.png"
     }    
 ]
 }

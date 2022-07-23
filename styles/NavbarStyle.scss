@@ -1,74 +1,162 @@
-@import 'colorTheme';
+@import "colorTheme";
 
 @media (min-width: 600px) {
-    .navbarCustom{
-        padding: 0 20vw;
-        border-bottom: 1px solid $lightGreyHorizontalLine;
-        margin-bottom: 10px;
-    }
-    .navbar-item.navbar-itemCustom{
-        text-align: center !important;
-        display: block;
-        min-width: 100px;
-        align-self: center;
-        margin-left: 5px;
-        color: #3a3a3a;
+  .navbarCustom {
+    padding: 0 20vw;
+    border-bottom: 1px solid $lightGreyHorizontalLine;
+    margin-bottom: 10px;
+
+    .navbar-item.navbar-itemCustom {
+      text-align: center !important;
+      display: block;
+      min-width: 100px;
+      align-self: center;
+      margin-left: 5px;
+      color: $darkGreyFont;
     }
 
-    .shopButton{
-        border-radius: 20px;
-        min-width: 150px !important;
+    .shopButton {
+      border-radius: 20px;
+      min-width: 150px !important;
     }
+  }
+  ::-webkit-scrollbar {
+    width: 0.5px;
+    height: 3px;
+  }
 
-    .categoriesTileDiv{
-        max-width: min-content;
-        transition: 0.2s ease-in !important;
-    }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(255, 253, 253);
+  }
 
-    .categoriesTileDiv p{
-        font-size: 14px;
-    }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(255, 253, 253);
+  }
 
-    .categoriesBarDiv{
-        max-width: min-content;
-        margin: auto;
-        margin-bottom:10px;
-    }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(255, 253, 253);
+  }
 
-    .categoriesTileDiv:hover{
-        background-color: $lightBlueHover;
-        border-radius: 10px;
-       
+  .categoriesTileDiv {
+    width: 100px;
+    transition: background-color 0.2s ease-in !important;
+    transition: width 200ms !important;
+    p {
+      font-size: 14px;
     }
+  }
 
-    .hoverLightBlue:hover{
-        background-color: $lightBlueHover !important;
-        border-radius: 10px;
+  .categoriesBarDiv {
+    max-width: min-content;
+    margin: auto;
+    margin-bottom: 10px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: inline-block;
+
+    .widthzero {
+      width: 0;
+      transition: width 200ms;
     }
+  }
+
+  .moreCategoriesBox {
+    max-width: max-content;
+    margin: auto;
+    margin-bottom: 10px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: inline-block;
+    width: 700px;
+  }
+
+  .closeCategoriesList {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    margin-top: -14px;
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  .categoriesTileDiv:hover {
+    background-color: $lightBlueHover;
+    border-radius: 10px;
+  }
+
+  .hoverLightBlue:hover {
+    background-color: $lightBlueHover !important;
+    border-radius: 10px;
+  }
 }
 
-.navbar-item.navbar-itemCustom:hover{
-    transition: 0.2s ease-in !important;
+.navbar-item.navbar-itemCustom:hover {
+  transition: 0.2s ease-in !important;
 }
 
-.shopButton{
-    background-color: $blueButton;
-    color: white !important;
-    transition: 0.1s ease-in !important;
+.shopButton {
+  background-color: $blueButton;
+  color: white !important;
+  transition: 0.1s ease-in !important;
 }
-.hoverDarkBlue:hover{
-    background-color: $blueButtonHover !important;
+.hoverDarkBlue:hover {
+  background-color: $blueButtonHover !important;
 }
 
 @media screen and(max-width:600px) {
-    .categoriesBarDiv{
-        overflow-y: hidden;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-    .categoriesTileDiv{
-        max-width: min-content;
-        display: inline-block;
-    }
+  .categoriesBarDiv {
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .categoriesTileDiv {
+    max-width: min-content;
+    display: inline-block;
+  }
 }
 
+.loader-wrapper {
+  height: 100vh;
+  width: 100%;
+  transition: opacity 0.3s;
+  background-color: $lightBlueHover;
+  padding-top: 10vh;
+
+  .loader {
+    height: 80px;
+    width: 80px;
+    margin: auto;
+  }
+}
+
+.error-wrapper {
+  height: 100vh;
+  width: 100%;
+  background-color: $lightBlueHover;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  padding-top: 10%;
+
+  button {
+    background-color: $blueButton;
+    color: white;
+    border: $blueButton 1px solid;
+    border-radius: 25px;
+    padding: 8px 12px;
+    margin-top: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color ease 0.2s;
+  }
+
+  button:hover {
+    background-color: $blueButtonHover;
+  }
+}
