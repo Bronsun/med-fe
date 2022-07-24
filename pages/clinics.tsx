@@ -11,7 +11,7 @@ import CategoriesBar from "../components/Organisms/CategoriesBar";
 import NavbarComponent from "../components/Organisms/Navbar";
 import ClinicModel from "../models/ClinicModel";
 import ErrorComponent from "../components/Atoms/ErrorComponent";
-import Map from "../components/Organisms/Map"
+import Map from "../components/Organisms/Map";
 import dynamic from "next/dynamic";
 
 const Clinics: NextPage = () => {
@@ -39,7 +39,9 @@ const Clinics: NextPage = () => {
     flex: "0 0 auto",
   };
 
-  const MyMap = dynamic(() => import('../components/Organisms/Map'), { ssr: false });
+  const MyMap = dynamic(() => import("../components/Organisms/Map"), {
+    ssr: false,
+  });
   return (
     <div className="clinicsPageWrapper">
       <NavbarComponent style={flexStyle} />
@@ -49,7 +51,7 @@ const Clinics: NextPage = () => {
         <div className="clinicsMiddlePanel">
           <div className="clinicsMiddleContentWrapper">
             {service.state === ServiceState.InProgress && <LoadingComponent />}
-            {service.state === ServiceState.Error && <ErrorComponent/>}
+            {service.state === ServiceState.Error && <ErrorComponent />}
             {service.state === ServiceState.Fetched && (
               <ClinicsList clinicsList={clinicsList} />
             )}
@@ -64,7 +66,8 @@ const Clinics: NextPage = () => {
           )}
         </div>
         <div>
-          <MyMap clinicsList={clinicsList}/></div>
+          <MyMap clinicsList={clinicsList} />
+        </div>
       </div>
     </div>
   );

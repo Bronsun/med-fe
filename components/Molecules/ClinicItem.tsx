@@ -15,9 +15,7 @@ const ClinicItem = (props: ClinicItemProps) => {
   const goToClinicDetails = () => {
     router.push({
       pathname:
-        props.clinic.private_name.replaceAll(" ", "-") +
-        "_" +
-        props.clinic.id,
+        props.clinic.private_name.replaceAll(" ", "-") + "_" + props.clinic.id,
     });
   };
 
@@ -54,7 +52,13 @@ const ClinicItem = (props: ClinicItemProps) => {
           toilet={props.clinic.toilet}
         />
 
-        <ClinicStatistics queue={props.clinic.awaiting} days={props.clinic.average_period} />
+        {props.clinic.visit_date !== undefined &&
+          props.clinic.visit_date.length > 0 && (
+            <ClinicStatistics
+              queue={props.clinic.awaiting}
+              days={props.clinic.average_period}
+            />
+          )}
       </div>
     </div>
   );

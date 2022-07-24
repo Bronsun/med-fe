@@ -10,6 +10,7 @@ import CategoriesBar from "../components/Organisms/CategoriesBar";
 import NavbarComponent from "../components/Organisms/Navbar";
 import ClinicDetails from "../models/ClinicDetails";
 import ClinicDetailsItem from "../components/Molecules/ClinicDetailsItem";
+import ContactDetails from "../components/Molecules/ContactDetails";
 
 const ClinicDetails: NextPage = () => {
   const service = APIservice();
@@ -38,8 +39,9 @@ const ClinicDetails: NextPage = () => {
     <div className="clinicsPageWrapper">
       <NavbarComponent style={flexStyle} />
       <CategoriesBar style={flexStyle} />
-      <div className="clinicsDetailsPanelWrapper">
-        <div className="reklama" />
+      <div className="clinicsDetailsPanelWrapper background-whole">
+        <div>left</div>
+
         <div className="clinicDetailsMiddlePanel">
           {service.state === ServiceState.InProgress && <LoadingComponent />}
           {service.state === ServiceState.Error && <ErrorComponent />}
@@ -50,7 +52,14 @@ const ClinicDetails: NextPage = () => {
             />
           )}
         </div>
-        <div className="reklama" />
+        <div>
+          <div className="contactWrapper">
+            {service.state === ServiceState.InProgress && <LoadingComponent />}
+            {service.state === ServiceState.Fetched && clinic !== undefined && (
+              <ContactDetails clinic={clinic?.clinic_info} />
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

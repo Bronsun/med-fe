@@ -7,14 +7,14 @@ interface BenefitsListProps {
 
 const BenefitsList = (props: BenefitsListProps) => {
   return (
-    <table>
+    <div className="table">
       {props.benefits.map((item, index) => (
-        <tr key={index}>
-          <td>{item.name}</td>
-          <td>{parseDateToString(item.visit_date)}</td>
-        </tr>
+        <div key={index}>
+          <p>{item.name}</p>
+          <p>{parseDateToString(item.visit_date)}</p>
+        </div>
       ))}
-    </table>
+    </div>
   );
 };
 
