@@ -4,15 +4,15 @@
   background-color: transparent !important;
   padding: 10px 20px;
   border-top: 1px solid $lightGreyHorizontalLine;
-  -webkit-box-shadow: 0px 2px 6px 0px inset rgba(126, 126, 133, 0.15);
-  -moz-box-shadow: 0px 2px 6px 0px inset rgba(126, 126, 133, 0.15);
-  box-shadow: 0px 2px 6px 0px inset rgba(126, 126, 133, 0.15);
+  
 
   button {
     background-color: transparent;
     border-color: $lightGreyText;
     color: $darkGreyFont;
-    border-radius: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in;
   }
 
   button:hover {

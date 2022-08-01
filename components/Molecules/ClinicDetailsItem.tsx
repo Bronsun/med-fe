@@ -5,6 +5,7 @@ import BenefitsList from "../Atoms/BenefitsList";
 const ClinicDetailsItem = (clinic: ClinicDetails) => {
   return (
     <div className="clinicDetailsWrapper">
+      
       <ClinicTitle
         nfz_name={clinic.clinic_info.nfz_name}
         private_name={clinic.clinic_info.private_name}

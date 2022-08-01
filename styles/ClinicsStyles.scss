@@ -24,12 +24,12 @@
     }
 
     .clinicsItem {
-        margin: 20px 20px 0 20px;
+        margin: 10px 20px 0 20px;
         padding: 15px;
         grid-template-columns: auto fit-content;
         grid-template-rows: auto auto auto;
         grid-template-areas: "title phone""date date""address address";
-        row-gap: 10px;
+        
 
         .clinicsAddress {
             grid-template-columns: auto auto max-content;
@@ -38,7 +38,6 @@
         .clinicsPhone {
             justify-self: end;
         }
-
         .clinicIcons {
             padding-right: 30px;
             align-self: baseline;
@@ -48,6 +47,10 @@
             display: grid;
             grid-template-columns: max-content max-content max-content max-content;
             justify-content: end;
+        }
+
+        .clinicsItem:hover {
+            background-color: black !important;
         }
     }
 
@@ -72,6 +75,11 @@
     }
 }
 
+.clinicPhoneNumber {
+    margin-bottom: 10px;
+}
+
+
 .clinicsPageWrapper {
     height: 100vh;
     display: flex;
@@ -91,7 +99,7 @@
 }
 
 .popupsMarkerItem {
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: white;
 
     color: $darkGreyFont;
@@ -99,7 +107,7 @@
 
 
     .clinicPrivateName {
-        color: $darkGreyFont;
+        color: $lightGreyText;
     }
 
     .clinicsTitle {
@@ -140,13 +148,12 @@
 }
 
 .clinicsItem {
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: white;
-    -webkit-box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
-    -moz-box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
-    box-shadow: 0px 8px 8px -3px rgba(126, 126, 133, 0.4);
+    border:0.5px solid $lightGreyText;
     color: $darkGreyFont;
     display: grid;
+    transition: 0.2s ease-out;
 
     .clinicNfzName {
         font-weight: 500;
@@ -225,6 +232,11 @@
     }
 }
 
+.clinicGoTo:hover {
+   text-decoration: underline;
+   text-decoration-color: $lightGreyText;
+}
+
 .noResults {
     width: 100%;
     text-align: center;
@@ -234,7 +246,7 @@
 }
 
 .clinicsItem:last-child {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width: 600px) {
@@ -301,14 +313,26 @@
 }
 
 .map {
-    border-radius: 20px;
+    border: 0.5px solid $lightGreyText;
+    border-radius: 10px;
     width: 30vw;
     height: 50%;
     margin: 20px;
 }
 
-.iconNotActive{
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+
+.iconNotActive {
+    -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
     opacity: 0.7;
+}
+
+.phoneButtom{
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+.phoneButtom:hover{
+    text-decoration: underline !important;
 }

@@ -13,7 +13,8 @@ const SelectSearchComponent = (
   props: SelectComponentProps
 ) => {
   const [inputValue, setValue] = useState("");
-  const [selectedValue, setSelectedValue] = useState(null);
+  const [selectedValue, setSelectedValue] =
+    useState(null);
 
   const handleInputChange = (value: string) => {
     setValue(value);
@@ -42,10 +43,11 @@ const SelectSearchComponent = (
         className="react-select-container"
         classNamePrefix="react-select"
         placeholder={props.placeholder}
-        getOptionLabel={(e: any) => e.value }
+        getOptionLabel={(e: any) => e.value}
         getOptionValue={(e: any) => e.value}
         onInputChange={handleInputChange}
         onChange={onChange}
+        noOptionsMessage={() => "Brak wyników"}
       ></SelectSearch>
     </div>
   );

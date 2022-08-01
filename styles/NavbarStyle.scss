@@ -16,7 +16,7 @@
     }
 
     .shopButton {
-      border-radius: 20px;
+      border-radius: 5px;
       min-width: 150px !important;
     }
   }
@@ -44,6 +44,7 @@
     width: 100px;
     transition: background-color 0.2s ease-in !important;
     transition: width 200ms !important;
+    
     p {
       font-size: 14px;
     }
@@ -57,6 +58,8 @@
     overflow-x: auto;
     white-space: nowrap;
     display: inline-block;
+   
+    
 
     .widthzero {
       width: 0;
