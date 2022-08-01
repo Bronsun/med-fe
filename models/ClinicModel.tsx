@@ -20,4 +20,5 @@ export default interface ClinicModel {
   regon: string;
   average_period: number;
   awaiting: number;
+  slug: string;
 }

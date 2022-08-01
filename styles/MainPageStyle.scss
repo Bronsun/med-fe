@@ -39,7 +39,8 @@
 
 .mainSearcherWrapper{
     background-color: white;
-    border-radius: 20px;
+    border-radius: 10px;
+    border:0.5px solid $lightGreyText;
     -webkit-box-shadow: 0px 12px 22px -3px rgba(126, 126, 133, 0.4);
     -moz-box-shadow: 0px 12px 22px -3px rgba(126, 126, 133, 0.4);
     box-shadow: 0px 12px 22px -3px rgba(126, 126, 133, 0.4);
@@ -75,6 +76,11 @@
 
 .mainSearcherPanel{
     background-image: url("../public/mainPagePhoto.png");   
+    height: 400px;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+ 
 }
 
 .mainPageTile{
